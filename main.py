@@ -63,3 +63,11 @@ async def rotate_axis(request: Request):
         # Perform bottom counter-clockwise rotation
         new_state = rotation.bottom_counter_clockwise(list(cubeState["pieces"]))
         return {"pieces": new_state}
+    elif (move == 'R'):
+        # Perform right clockwise rotation
+        new_state = rotation.right_clockwise(list(cubeState["pieces"]))
+        return {"pieces": new_state}
+    elif (move == "R'"):
+        # Perform right counter-clockwise rotation
+        new_state = rotation.right_counter_clockwise(list(cubeState["pieces"]))
+        return {"pieces": new_state}
