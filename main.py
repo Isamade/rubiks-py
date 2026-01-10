@@ -1,6 +1,7 @@
 from fastapi import FastAPI, Request
 from fastapi.middleware.cors import CORSMiddleware
 import rotation
+import scramble
 
 # 1. Create the application instance
 app = FastAPI()
@@ -95,3 +96,22 @@ async def rotate_axis(request: Request):
         # Perform back counter-clockwise rotation
         new_state = rotation.back_counter_clockwise(list(cubeState["pieces"]))
         return {"pieces": new_state}
+    
+# 5. Add route to scramble the cube
+@app.post("/scramble")
+async def scramble_cube(request: Request):
+    # Parse the JSON body
+    json_data = await request.json()
+    # Convert to dictionary
+    data = dict(json_data)
+    # Extract moves and cubeState
+    moves = data["moves"]
+    cubeState = data["cubeState"]
+    # Validate moves and cubeState
+    if (not all(move in ['U', "U'", 'D', "D'", 'L', "L'", 'R', "R'", 'F', "F'", 'B', "B'"] for move in moves)):
+        return {"error": "Invalid moves"}
+    elif (len(cubeState["pieces"]) != 27):
+        return {"error": "Invalid cube state"}
+    # Scramble the cube
+    new_state = scramble.scramble_cube(list(cubeState["pieces"]), moves)
+    return {"pieces": new_state}
