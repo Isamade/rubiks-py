@@ -1,7 +1,14 @@
 import rotation
+import random
 
-def scramble_cube(cube_state, moves):
+def scramble_cube(cube_state, moves_count):
     # Apply a series of moves to scramble the cube
+    possible_moves = ['U', "U'", 'D', "D'", 'R', "R'", 'L', "L'", 'F', "F'", 'B', "B'"]
+    moves = []
+    for i in range(moves_count):
+        # Randomly select a move
+        move = random.choice(possible_moves)
+        moves.append(move)
     for move in moves:
         if move == 'U':
             cube_state = rotation.top_clockwise(cube_state)

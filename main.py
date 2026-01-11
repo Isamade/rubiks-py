@@ -105,13 +105,13 @@ async def scramble_cube(request: Request):
     # Convert to dictionary
     data = dict(json_data)
     # Extract moves and cubeState
-    moves = data["moves"]
+    moves_count = data["movesCount"]
     cubeState = data["cubeState"]
     # Validate moves and cubeState
-    if (not all(move in ['U', "U'", 'D', "D'", 'L', "L'", 'R', "R'", 'F', "F'", 'B', "B'"] for move in moves)):
-        return {"error": "Invalid moves"}
+    if moves_count <= 0:
+        return {"error": "Invalid moves count"}
     elif (len(cubeState["pieces"]) != 27):
         return {"error": "Invalid cube state"}
     # Scramble the cube
-    new_state = scramble.scramble_cube(list(cubeState["pieces"]), moves)
+    new_state = scramble.scramble_cube(list(cubeState["pieces"]), moves_count)
     return {"pieces": new_state}
