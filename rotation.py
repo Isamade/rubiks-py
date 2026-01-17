@@ -43,6 +43,7 @@ def top_clockwise(cube_state):
 
             # Update the piece's position by changing colors in new_state
             new_state[locations_matrix[new_i][new_j]]["colors"] = change_colors(cube_state[locations_matrix[i][j]]["colors"].copy())
+            new_state[locations_matrix[new_i][new_j]]["position"] = cube_state[locations_matrix[i][j]]["position"]
 
     return new_state
 
@@ -88,6 +89,7 @@ def top_counter_clockwise(cube_state):
 
             # Update the piece's position by changing colors in new_state
             new_state[locations_matrix[new_i][new_j]]["colors"] = change_colors(cube_state[locations_matrix[i][j]]["colors"].copy())
+            new_state[locations_matrix[new_i][new_j]]["position"] = cube_state[locations_matrix[i][j]]["position"]
 
     return new_state
 
@@ -134,6 +136,7 @@ def bottom_clockwise(cube_state):
 
             # Update the piece's position by changing colors in new_state
             new_state[locations_matrix[new_i][new_j]]["colors"] = change_colors(cube_state[locations_matrix[i][j]]["colors"].copy())
+            new_state[locations_matrix[new_i][new_j]]["position"] = cube_state[locations_matrix[i][j]]["position"]
 
     return new_state
 
@@ -180,6 +183,7 @@ def bottom_counter_clockwise(cube_state):
 
             # Update the piece's position by changing colors in new_state
             new_state[locations_matrix[new_i][new_j]]["colors"] = change_colors(cube_state[locations_matrix[i][j]]["colors"].copy())
+            new_state[locations_matrix[new_i][new_j]]["position"] = cube_state[locations_matrix[i][j]]["position"]
 
     return new_state
 
@@ -226,6 +230,7 @@ def right_clockwise(cube_state):
 
             # Update the piece's position by changing colors in new_state
             new_state[locations_matrix[new_i][new_j]]["colors"] = change_colors(cube_state[locations_matrix[i][j]]["colors"].copy())
+            new_state[locations_matrix[new_i][new_j]]["position"] = cube_state[locations_matrix[i][j]]["position"]
 
     return new_state
 
@@ -272,6 +277,7 @@ def right_counter_clockwise(cube_state):
 
             # Update the piece's position by changing colors in new_state
             new_state[locations_matrix[new_i][new_j]]["colors"] = change_colors(cube_state[locations_matrix[i][j]]["colors"].copy())
+            new_state[locations_matrix[new_i][new_j]]["position"] = cube_state[locations_matrix[i][j]]["position"]
 
     return new_state
 
@@ -318,6 +324,7 @@ def left_clockwise(cube_state):
 
             # Update the piece's position by changing colors in new_state
             new_state[locations_matrix[new_i][new_j]]["colors"] = change_colors(cube_state[locations_matrix[i][j]]["colors"].copy())
+            new_state[locations_matrix[new_i][new_j]]["position"] = cube_state[locations_matrix[i][j]]["position"]
 
     return new_state
 
@@ -364,6 +371,7 @@ def left_counter_clockwise(cube_state):
 
             # Update the piece's position by changing colors in new_state
             new_state[locations_matrix[new_i][new_j]]["colors"] = change_colors(cube_state[locations_matrix[i][j]]["colors"].copy())
+            new_state[locations_matrix[new_i][new_j]]["position"] = cube_state[locations_matrix[i][j]]["position"]
 
     return new_state
 
@@ -410,6 +418,7 @@ def front_clockwise(cube_state):
 
             # Update the piece's position by changing colors in new_state
             new_state[locations_matrix[new_i][new_j]]["colors"] = change_colors(cube_state[locations_matrix[i][j]]["colors"].copy())
+            new_state[locations_matrix[new_i][new_j]]["position"] = cube_state[locations_matrix[i][j]]["position"]
 
     return new_state
 
@@ -456,6 +465,7 @@ def front_counter_clockwise(cube_state):
 
             # Update the piece's position by changing colors in new_state
             new_state[locations_matrix[new_i][new_j]]["colors"] = change_colors(cube_state[locations_matrix[i][j]]["colors"].copy())
+            new_state[locations_matrix[new_i][new_j]]["position"] = cube_state[locations_matrix[i][j]]["position"]
 
     return new_state
 
@@ -502,6 +512,7 @@ def back_clockwise(cube_state):
 
             # Update the piece's position by changing colors in new_state
             new_state[locations_matrix[new_i][new_j]]["colors"] = change_colors(cube_state[locations_matrix[i][j]]["colors"].copy())
+            new_state[locations_matrix[new_i][new_j]]["position"] = cube_state[locations_matrix[i][j]]["position"]
 
     return new_state
 
@@ -548,5 +559,6 @@ def back_counter_clockwise(cube_state):
 
             # Update the piece's position by changing colors in new_state
             new_state[locations_matrix[new_i][new_j]]["colors"] = change_colors(cube_state[locations_matrix[i][j]]["colors"].copy())
+            new_state[locations_matrix[new_i][new_j]]["position"] = cube_state[locations_matrix[i][j]]["position"]
 
     return new_state
