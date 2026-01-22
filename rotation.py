@@ -13,10 +13,10 @@ def top_clockwise(cube_state):
 
     # Build the locations matrix for the pieces on top face
     locations_matrix = []
-    for i in range(3, 0, -1):
+    for i in range(-3, 0, 1):
         locations_vector = []
         for j in range(1, 4, 1):
-            locations_vector.append(9*j - i)
+            locations_vector.append(9*j + i)
         locations_matrix.append(locations_vector)
 
     # Create the rotation matrix by first transposing locations_matrix
@@ -59,10 +59,10 @@ def top_counter_clockwise(cube_state):
 
     # Build the locations matrix for the pieces on top face
     locations_matrix = []
-    for i in range(3, 0, -1):
+    for i in range(-3, 0, 1):
         locations_vector = []
         for j in range(1, 4, 1):
-            locations_vector.append(9*j - i)
+            locations_vector.append(9*j + i)
         locations_matrix.append(locations_vector)
 
     # Create the rotation matrix by first transposing locations_matrix
