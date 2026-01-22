@@ -104,7 +104,7 @@ def bottom_clockwise(cube_state):
 
     # Build the locations matrix for the pieces on bottom face
     locations_matrix = []
-    for i in range(0, 3, 1):
+    for i in range(2, -1, -1):
         locations_vector = []
         for j in range(0, 3, 1):
             locations_vector.append(9*j + i)
@@ -118,9 +118,9 @@ def bottom_clockwise(cube_state):
             locations_vector.append(locations_matrix[j][i])
         rotation_matrix.append(locations_vector)
 
-    # Complete the rotation matrix by swapping first and third rows
+    # Complete the rotation matrix by swapping first and third columns
     for i in range(3):
-        rotation_matrix[0], rotation_matrix[2] = rotation_matrix[2], rotation_matrix[0]
+        rotation_matrix[i][0], rotation_matrix[i][2] = rotation_matrix[i][2], rotation_matrix[i][0]
 
     # Update new_state based on rotation
     for i in range(3):
@@ -150,7 +150,7 @@ def bottom_counter_clockwise(cube_state):
 
     # Build the locations matrix for the pieces on bottom face
     locations_matrix = []
-    for i in range(0, 3, 1):
+    for i in range(2, -1, -1):
         locations_vector = []
         for j in range(0, 3, 1):
             locations_vector.append(9*j + i)
@@ -164,9 +164,8 @@ def bottom_counter_clockwise(cube_state):
             locations_vector.append(locations_matrix[j][i])
         rotation_matrix.append(locations_vector)
 
-    # Complete the rotation matrix by swapping first and third columns
-    for i in range(3):
-        rotation_matrix[i][0], rotation_matrix[i][2] = rotation_matrix[i][2], rotation_matrix[i][0]
+    # Complete the rotation matrix by swapping first and third rows
+    rotation_matrix[0], rotation_matrix[2] = rotation_matrix[2], rotation_matrix[0]
 
     # Update new_state based on rotation
     for i in range(3):
