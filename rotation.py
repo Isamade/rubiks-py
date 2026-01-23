@@ -378,10 +378,10 @@ def front_clockwise(cube_state):
 
     # Build the locations matrix for the pieces on front face
     locations_matrix = []
-    for i in range(3, 0, -1):
+    for i in range(0, -3, -1):
         locations_vector = []
-        for j in range(0, 27, 9):
-            locations_vector.append(3*i -1 + j)
+        for j in range(1, 4, 1):
+            locations_vector.append(9*j + 3*i -1)
         locations_matrix.append(locations_vector)
 
     # Create the rotation matrix by first transposing locations_matrix
@@ -424,10 +424,10 @@ def front_counter_clockwise(cube_state):
 
     # Build the locations matrix for the pieces on front face
     locations_matrix = []
-    for i in range(3, 0, -1):
+    for i in range(0, -3, -1):
         locations_vector = []
-        for j in range(0, 27, 9):
-            locations_vector.append(3*i -1 + j)
+        for j in range(1, 4, 1):
+            locations_vector.append(9*j + 3*i -1)
         locations_matrix.append(locations_vector)
 
     # Create the rotation matrix by first transposing locations_matrix
@@ -439,8 +439,8 @@ def front_counter_clockwise(cube_state):
         rotation_matrix.append(locations_vector)
 
     # Complete the rotation matrix by swapping first and third rows
-    for i in range(3):
-        rotation_matrix[0], rotation_matrix[2] = rotation_matrix[2], rotation_matrix[0]
+
+    rotation_matrix[0], rotation_matrix[2] = rotation_matrix[2], rotation_matrix[0]
 
     # Update new_state based on rotation
     for i in range(3):
