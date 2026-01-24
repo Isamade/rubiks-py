@@ -347,8 +347,7 @@ def left_counter_clockwise(cube_state):
         rotation_matrix.append(locations_vector)
 
     # Complete the rotation matrix by swapping first and third rows
-    for i in range(3):
-        rotation_matrix[0], rotation_matrix[2] = rotation_matrix[2], rotation_matrix[0]
+    rotation_matrix[0], rotation_matrix[2] = rotation_matrix[2], rotation_matrix[0]
 
     # Update new_state based on rotation
     for i in range(3):
