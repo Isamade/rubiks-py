@@ -35,4 +35,4 @@ def scramble_cube(cube_state, moves_count):
         elif move == "B'":
             cube_state = rotation.back_counter_clockwise(cube_state)
 
-    return cube_state
+    return { cube_state, moves }

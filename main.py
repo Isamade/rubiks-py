@@ -114,4 +114,4 @@ async def scramble_cube(request: Request):
         return {"error": "Invalid cube state"}
     # Scramble the cube
     new_state = scramble.scramble_cube(list(cubeState["pieces"]), moves_count)
-    return {"pieces": new_state}
+    return {"pieces": new_state.cube_state}
