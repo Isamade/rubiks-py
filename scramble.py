@@ -4,12 +4,10 @@ import random
 def scramble_cube(cube_state, moves_count):
     # Apply a series of moves to scramble the cube
     possible_moves = ['U', "U'", 'D', "D'", 'R', "R'", 'L', "L'", 'F', "F'", 'B', "B'"]
-    moves = []
-    for i in range(moves_count):
-        # Randomly select a move
+    rotation_sequence = []
+    for _ in range(moves_count):
         move = random.choice(possible_moves)
-        moves.append(move)
-    for move in moves:
+        rotation_sequence.append(move)
         if move == 'U':
             cube_state = rotation.top_clockwise(cube_state)
         elif move == "U'":
@@ -35,4 +33,4 @@ def scramble_cube(cube_state, moves_count):
         elif move == "B'":
             cube_state = rotation.back_counter_clockwise(cube_state)
 
-    return { cube_state, moves }
+    return { "rotation_sequence": rotation_sequence, "cube_state": cube_state }
